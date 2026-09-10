@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahiga Go Life - Central de Instalação</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        body { background: #000; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; }
+        .container { width: 100%; max-width: 650px; background: #121318; border: 1px solid #27272a; border-radius: 16px; padding: 24px; box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
+        h1 { font-size: 24px; color: #38bdf8; margin-bottom: 8px; text-align: center; }
+        p { color: #a1a1aa; font-size: 14px; text-align: center; margin-bottom: 24px; }
+        .os-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 20px; }
+        .os-btn { background: #1e1f24; border: 1px solid #27272a; color: #fff; padding: 14px; border-radius: 12px; cursor: pointer; font-size: 15px; font-weight: 500; text-align: center; transition: 0.2s; }
+        .os-btn:hover { border-color: #38bdf8; background: #27272a; }
+        .step-box { background: #18181b; border: 1px solid #38bdf8; border-radius: 12px; padding: 16px; margin-top: 16px; display: none; font-size: 14px; line-height: 1.6; }
+        .step-box h3 { color: #38bdf8; margin-bottom: 8px; font-size: 16px; }
+        code { background: #000; padding: 2px 6px; border-radius: 4px; color: #4ade80; font-family: monospace; }
+        pre { background: #000; padding: 10px; border-radius: 8px; overflow-x: auto; margin-top: 8px; color: #4ade80; font-size: 12px; }
+        .back-link { display: inline-block; margin-top: 15px; color: #94a3b8; cursor: pointer; font-size: 13px; text-decoration: underline; }
+        .download-btn { background: #38bdf8; color: #000; padding: 10px 16px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Ahiga Go Life</h1>
+    <p>Selecione o seu sistema operacional para baixar e configurar a IA com atualização automática.</p>
+
+    <div id="main-menu" class="os-grid">
+        <button class="os-btn" onclick="mostrarPassos('windows')">🪟 Windows</button>
+        <button class="os-btn" onclick="mostrarPassos('mac')">🍏 Mac</button>
+        <button class="os-btn" onclick="mostrarPassos('linux')">🐧 Linux</button>
+        <button class="os-btn" onclick="mostrarPassos('android')">🤖 Android</button>
+        <button class="os-btn" onclick="mostrarPassos('ios')">📱 iOS / iPhone</button>
+        <button class="os-btn" onclick="mostrarPassos('outro')">⚙️ Outro Sistema</button>
+    </div>
+
+    <div id="step-windows" class="step-box">
+        <h3>Instalação no Windows</h3>
+        <p>Baixe o pacote oficial do projeto, descompacte-o e execute os comandos automáticos.</p>
+        <a href="https://github.com/a30208777-ai/Ahiga-go-life-baixar/archive/refs/heads/main.zip" class="download-btn">Baixar IA (.zip)</a>
+        <p style="margin-top:12px; font-size:13px; text-align:left;">1. Descompacte o arquivo baixado.<br>2. Abra a pasta e execute o script de instalação ou abra o cmd na pasta e digite: <code>pip install flask</code> e depois <code>python IA-ahigagolife.py</code></p>
+        <br><span class="back-link" onclick="voltarMenu()">← Voltar</span>
+    </div>
+
+    <div id="step-mac" class="step-box">
+        <h3>Instalação no macOS</h3>
+        <p>Baixe o repositório ou use o terminal para clonar e rodar o sistema:</p>
+        <a href="https://github.com/a30208777-ai/Ahiga-go-life-baixar/archive/refs/heads/main.zip" class="download-btn">Baixar Repositório (.zip)</a>
+        <pre>brew install python3 git
+pip3 install flask
+python3 IA-ahigagolife.py</pre>
+        <span class="back-link" onclick="voltarMenu()">← Voltar</span>
+    </div>
+
+    <div id="step-linux" class="step-box">
+        <h3>Instalação no Linux</h3>
+        <p>Escolha o seu ambiente Linux ou use o pacote geral:</p>
+        <a href="https://github.com/a30208777-ai/Ahiga-go-life-baixar/archive/refs/heads/main.zip" class="download-btn">Baixar Código (.zip)</a>
+        <pre>sudo apt update && sudo apt install python3 python3-pip -y
+pip3 install flask --break-system-packages
+python3 IA-ahigagolife.py</pre>
+        <span class="back-link" onclick="voltarMenu()">← Voltar</span>
+    </div>
+
+    <div id="step-android" class="step-box">
+        <h3>Instalação no Android</h3>
+        <p>O seu Android permite instalação direta de APKs ou é uma versão restrita (versão 20+)?</p>
+        <br>
+        <button class="os-btn" style="width:100%; margin-bottom:8px;" onclick="androidPermite(true)">Permite APKs Diretos</button>
+        <button class="os-btn" style="width:100%;" onclick="androidPermite(false)">Versão Restrita (Usa Shizuku sem PC)</button>
+        <div id="android-detalhe" style="margin-top:10px;"></div>
+        <br><span class="back-link" onclick="voltarMenu()">← Voltar</span>
+    </div>
+
+    <div id="step-ios" class="step-box">
+        <h3>Instalação no iOS (iPhone / iPad)</h3>
+        <p>O iOS restringe execuções locais de terminal. Utilize via PWA:</p>
+        <p>1. Abra o link da IA no Safari.<br>2. Toque em <b>Compartilhar</b>.<br>3. Selecione <b>"Adicionar à Tela de Início"</b>.</p>
+        <span class="back-link" onclick="voltarMenu()">← Voltar</span>
+    </div>
+
+    <div id="step-outro" class="step-box">
+        <h3>Outros Sistemas</h3>
+        <p>Certifique-se de ter o Python 3 e o Flask instalados e execute o pacote:</p>
+        <a href="https://github.com/a30208777-ai/Ahiga-go-life-baixar/archive/refs/heads/main.zip" class="download-btn">Baixar Pacote (.zip)</a>
+        <pre>python3 IA-ahigagolife.py</pre>
+        <span class="back-link" onclick="voltarMenu()">← Voltar</span>
+    </div>
+
+</div>
+
+<script>
+    function mostrarPassos(os) {
+        document.getElementById('main-menu').style.display = 'none';
+        document.querySelectorAll('.step-box').forEach(el => el.style.display = 'none');
+        document.getElementById('step-' + os).style.display = 'block';
+    }
+
+    function voltarMenu() {
+        document.querySelectorAll('.step-box').forEach(el => el.style.display = 'none');
+        document.getElementById('main-menu').style.display = 'grid';
+    }
+
+    function androidPermite(permite) {
+        const div = document.getElementById('android-detalhe');
+        if (permite) {
+            div.innerHTML = `<p style="color:#4ade80; margin-top:8px;">1. Instale o <b>Termux</b>.<br>2. Baixe o projeto pelo link: <a href="https://github.com/a30208777-ai/Ahiga-go-life-baixar/archive/refs/heads/main.zip" style="color:#38bdf8;">Baixar .zip</a><br>3. No Termux instale as dependências:</p><pre>pkg update && pkg install python -y && pip install flask</pre>`;
+        } else {
+            div.innerHTML = `<p style="color:#f43f5e; margin-top:8px;"><b>Modo Restrito (Versão 20+ via Shizuku):</b><br>1. Instale o aplicativo <b>Shizuku</b>.<br>2. Ative a <i>Depuração Sem Fio</i> nas Opções de Desenvolvedor do Android.<br>3. Abra o Shizuku e faça o pareamento direto na tela (sem precisar de computador ou cabo USB).<br>4. Com o Shizuku ativo, utilize um terminal compatível no celular para rodar comandos ADB e executar o Ahiga Go Life.</p>`;
+        }
+    }
+</script>
+
+</body>
+</html>
