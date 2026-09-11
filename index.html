@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahiga Go Life - baixe e execute a ia</title>
+    <title>Ahiga Go Life - Central de Instalação</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
         body { background: #050508; color: #f8fafc; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; min-height: 100vh; padding: 20px; }
@@ -12,6 +12,13 @@
         
         h1 { font-size: 26px; color: #38bdf8; margin-bottom: 6px; text-align: center; letter-spacing: -0.5px; }
         p.subtitle { color: #94a3b8; font-size: 13px; text-align: center; margin-bottom: 20px; }
+
+        /* Caixa de Aviso / Boas-Vindas e Regras Críticas */
+        .welcome-notice-box { background: #0d0e12; border: 1px solid #c084fc; border-radius: 14px; padding: 16px; margin-bottom: 20px; font-size: 12px; line-height: 1.6; color: #e4e4e7; text-align: left; }
+        .welcome-notice-box h4 { color: #c084fc; font-size: 14px; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+        .welcome-notice-box ul { padding-left: 18px; margin-top: 6px; }
+        .welcome-notice-box li { margin-bottom: 4px; }
+        .warning-rule { color: #f43f5e; font-weight: 600; }
 
         /* Galeria de Logos da IA */
         .logo-gallery-section { margin-bottom: 24px; background: #0e0f14; border: 1px solid #1e1f26; border-radius: 14px; padding: 14px; text-align: center; }
@@ -62,10 +69,21 @@
     </style>
 </head>
 <body>
-<h1>bem-vindo a ia ahiga go life ela nunca vai tranmitir seus dados , você tem controle total a ela , não permitimos o uso da ia para ganhar dinheiro casso tende ganha dinheiro com a ia você pode acabar com seus servidores destruídos</h1>
+
 <div class="container">
     <h1>Ahiga Go Life</h1>
     <p class="subtitle">Central Inteligente de Instalação e Atualização Contínua</p>
+
+    <!-- SEÇÃO DE BOAS-VINDAS E DIRETRIZES DE SEGURANÇA -->
+    <div class="welcome-notice-box">
+        <h4>✨ Bem-vindo à IA Ahiga Go Life!</h4>
+        <p>Esta inteligência foi projetada para total autonomia e privacidade sob o seu comando:</p>
+        <ul>
+            <li>🔒 <b>Privacidade Absoluta:</b> Ela <i>nunca</i> vai transmitir seus dados para terceiros.</li>
+            <li>⚙️ <b>Controle Total:</b> Você possui autonomia e controle total sobre cada instrução e arquivo da IA.</li>
+            <li><span class="warning-rule">⚠️ Política Estrita de Uso:</span> Não é permitido o uso da IA para fins lucrativos ou tentativas de ganho financeiro. Caso haja tentativa de monetização ou ganho de dinheiro com a IA, seus servidores e instâncias poderão acabar com seus servidores destruídos de forma permanente.</li>
+        </ul>
+    </div>
 
     <div class="logo-gallery-section">
         <div class="logo-title">✦ Escolha o conceito de Logo da Ahiga Go Life</div>
@@ -187,7 +205,7 @@ python3 IA-ahigagolife.py</pre>
 
     function mostrarPassos(os) {
         document.getElementById('main-menu').style.display = 'none';
-        document.querySelectorAll('.step-box').forEach(el => el.style.display = 'none';
+        document.querySelectorAll('.step-box').forEach(el => el.style.display = 'none');
         document.getElementById('step-' + os).style.display = 'block';
     }
 
